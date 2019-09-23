@@ -25,17 +25,17 @@ public class BookController {
     }
 
     @RequestMapping(value="/{id}", method = RequestMethod.GET)
-    public Book getBookById(@PathVariable("id") String id){
+    public Book getBookById(@PathVariable("id") int id){
         return bookService.getBookById(id);
     }
 
     @RequestMapping(value="/{id}", method = RequestMethod.PUT)
-    public boolean updateBook(@PathVariable("id") String id, @RequestBody Book book){
+    public boolean updateBook(@PathVariable("id") int id, @RequestBody Book book){
         return bookService.updateBook(id, book);
     }
 
     @RequestMapping(value="/{id}", method = RequestMethod.DELETE)
-    public boolean deleteBook(@PathVariable("id") String id){
+    public boolean deleteBook(@PathVariable("id") int id){
         return bookService.deleteBook(id);
     }
 }

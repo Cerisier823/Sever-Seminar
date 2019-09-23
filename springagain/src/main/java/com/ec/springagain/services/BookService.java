@@ -22,18 +22,18 @@ public class BookService {
         return books;
     }
 
-    public Book getBookById(String id){
+    public Book getBookById(int id){
         for(Book book : books){
-            if(book.getId().equals(id)){
+            if(book.getId()==id){
                 return book;
             }
         }
         return null;
     }
 
-    public boolean updateBook(String id, Book updatedbook){
+    public boolean updateBook(int id, Book updatedbook){
         for(Book book : books){
-            if(book.getId().equals(id)){
+            if(book.getId()==id){
                 book.setName(updatedbook.getName());
                 book.setAuthor(updatedbook.getAuthor());
                 return true;
@@ -42,9 +42,9 @@ public class BookService {
         return false;
     }
 
-    public boolean deleteBook(String id){
+    public boolean deleteBook(int id){
         for(Book book : books){
-            if(book.getId().equals(id)){
+            if(book.getId()==id){
                 books.remove(book);
                 return true;
             }
